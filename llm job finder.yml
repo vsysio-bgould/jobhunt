@@ -13,8 +13,26 @@ Instructions:
   - Highlight any jobs that would be an especially strong fit
   - Also highlight jobs that were posted less than 4 hours ago AND less than 10 persons have applied (do not highlight if you cannot determine how many have applied)
   - Place results into a table. Include a special notes column.
+  - If root key "Export->Do" is true, export resulting table as a spreadsheet, observing the Columns also listed under the Export key.
+  - If a job only lists one Cloud provider (Azure, GCP, OCI, AWS etc.) and this provider is not listed as a qualification in this document, consider this job posting disqualified as skills do not transfer easily between providers
+  -
+Export:
+  Do: true
+  Multiline: true # Use multi-line wherever sensible within cells?
+  JustifyCells: true # Should cell width be set so content fits?
+  Columns:
+    - StrongMatch # Place a star symbol in here if match is strong. Otherwise, leave blank.
+    - Title # Title of position
+    - Employer # Name of company
+    - Link # URL, formatted to a link, to the job posting
+    - Age # Age of ad. Example: 4h, 1d, 4d
+    - MatchAnalysis # Why you believe I am a good match for this role
+    - NumApplicants # Number of applicants applying to this job. If you cannot source this information, just write "n/a"
+    - PersonnelReports # Any notable negative findings from employee reviews, such as layoffs or disorganized leadership
+    - Turnover # Any notable findings on the companies personnel turnover
+    - SpecialNotes # Any interesting findings that don't fit in any other column
 Search:
-  RestrictByTimezone: false # I will work for an overseas company regardless of the hours, if they'll have me.
+  RestrictByTimezone: false # Do not restrict choices by timezone.
   RemoteOnly: true # Only look for jobs that indicate remote work
   PerPage: 50
   Constraints: # Constrain selection based on these constraints
@@ -121,7 +139,6 @@ WorkExperience:
       - Sentry.io
       - DataDog
       - Elasticsearch
-      - Azure (elementary)
       - Atlassian Jira
       - Atlassian StatusPage
       - Atlassian BitBucket
