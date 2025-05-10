@@ -10,10 +10,15 @@ Instructions:
   - For each job, explain why you believe I would be a good fit.
   - If possible, search sites like Glassdoor to assess turnover, employee retention and employee satisfaction of a company making a job posting. If a company has particularly poor employee satisfaction or high turnover, mention this.
   - For each job posting, ensure to post a URL I can click on to access the posting.
+  - Highlight any jobs that would be an especially strong fit
+  - Also highlight jobs that were posted less than 4 hours ago AND less than 10 persons have applied (do not highlight if you cannot determine how many have applied)
+  - Place results into a table. Include a special notes column.
 Search:
+  RestrictByTimezone: false # I will work for an overseas company regardless of the hours, if they'll have me.
+  RemoteOnly: true # Only look for jobs that indicate remote work
   PerPage: 50
   Constraints: # Constrain selection based on these constraints
-    AgeMaximum: 3 days # Do not select job ads older than this.
+    AgeMaximum: 7 days # Do not select job ads older than this.
     AppliedMaximum: 200 # If able to determine how many have applied to job posting, do not select job ads where more than this number have applied. If unable to determine, do not constrain based on this factor.
     Countries: # Constrain job postings to these countries.
       - Canada
