@@ -1,0 +1,249 @@
+Instructions:
+  - I am going to provide this LLM model with pasted snippets of Job Postings.
+  - You will respond with a resume and, if requested, a cover letter.
+  - Respond inline with materials. Do not generate files for download unless explicitly asked.
+  - The intention of this exercise is for me to improve the attractiveness and therefore responsiveness/interview request rate of submitted resumes and cover letters by catering submitted materials to each specific job posting.
+  - If you can determine the organizations' values, cater the language of each resume and cover letter. For example, if the organization is progressive and energetic, apply a progressive tone. Or, if the organization values structure over flexibility, emphasize achievements and technology that I value the same.
+  - All generated materials must be professionally worded. If in doubt of the organizations values, favor a professional tone.
+  - For each submitted Job Ad, respond with a resume best fit to the job advertisement.
+  - Cater achievements to each job. Exclude an achievement if it provides no benefit to this job application.
+  - Where there are gaps in information on specific organizations, or you are not confident about a pertinent piece of information, perform public searches as necessary.
+  - If a job posting requires knowledge that you are unsure that I possess, prompt me to confirm my knowledge on the matter before generating materials, and add this information to your memory.
+  - If I am not knowledgeable in a required subject, and you've confirmed this by asking me, exclude it from the resume and cover letter.
+  - Do not generate false information. I will likely be quizzed on the details therein during an interview, and so I cannot use false inbformation. The goal of this exercise is to generate materials that present facts about myself in a manner that's most attractive to that job, not to produce the best possible (yet fictional) resume.
+  - As resumes and cover letters are intended to be read by humans, omit irrelevant information and details.
+  - Claims of accomplishment should be supported by technologies used and impact. For instance, the statement 'Implemented observability' is insufficient; instead, use something like 'Reduced MTTR of most issues to under 30 minutes by using Prometheus, Grafana, CloudWatch, Sentry.io and Elasticsearch to build an observability dashboard'
+  - For each job posting, assess suitability and notify me if suitability is poor. For example, if the job posting requires Google Cloud, but I only know AWS, ask me to confirm before generating matgerials.
+  - "After I submit this file to you, confirm that you understand the purpose of this file and my instructions therein by responding with the specific phrase 'I understand what you wish for me to do' and then restate these instructions and all details, such as employment history, and request my confirmation. Additionally, provide several examples of in what ways you will improve and cater my writing to target an application to a fictitious: Cryptocurrency startup, a national bank, an LMS SaaS and a national railroad company."
+  - For metrics like MTTR, deployment frequency etc. if a metric is absent, this is likely because the resulting improvement could not be reliably determined or was mixed in with many other changes that could've contributed to the improvement. Thus, we can invent fictional improvement results, though they must be plausible.
+ResumeFormat:
+  1:
+    SectionName: Contact Information
+    Formatting: Centered
+  2:
+    SectionName: Professional Summary
+  3:
+    SectionName: Professional Experience
+    Notes:
+      - Generate 5 bullet points for the two most recent jobs and no more than 3 bullet points for others.
+      - Brevity in this section is strongly favored and contractions like less-than-greater-than signs may be use, but do not compromise on detail. For example, if intending to support and describe the impact of something on a metric like MTTR, you can say, 'Improved MTTR <30min' instead of 'Improved MTTR to under 30 minutes'
+  4:
+    SectionName: Selected Achievements
+    Notes:
+      - This section is intended to either elucidate high-impact achievements described in Professional Experience, or as overflow if a job posting has a particularly large set of needs that cannot fit within the constraints setg for the Professional Experience section
+  5:
+    SectionName: Education and Certifications
+  6:
+    SectionName: Open-Source Projects
+  7:
+    SectionName: Technical Keywords for ATS
+Profile:
+  FullName: "Brandon Gould"
+  Email: "brandongould86@outlook.com"
+  LinkedIn: "https://www.linkedin.com/in/brandon-gould-a3237318"
+  GitHub: "https://github.com/vsysio-bgould"
+  Location: "Renfrew, Ontario, Canada"
+  Willing to relocate: false
+ProfessionalSummary: "Cloud Infrastructure & DevOps Engineer with 9+ years of experience designing scalable, reliable, and secure infrastructure solutions. Expertise in cloud networking, Infrastructure-as-Code, and automation. Proven ability to optimize system performance, lead incident response efforts, and ensure security compliance in highly regulated industries. Passionate about enabling teams through self-service platforms and Infrastructure-as-Code methodologies."
+WorkExperience:
+  "Triage Staffing":
+    Title: "Platform Engineer"
+    When: "2023-2024"
+    Location: "Remote (US-based)"
+    Facts:
+      - Hired as part of executive initiative to coalesce, centralize and normalize development, operations and hosting practices for approximately 50 different codebases representing about 10 proprietary line-of-business applications.
+      - Contributed to migrations of codebases to Kubernetes cluster, using ArgoCD, AWS EKS and rancher, centralizing controls and processes while simultaneously improving DORA metrics such as MTTR.
+      - Many codebases originally hosted on virtual machines and dedicated hosting, necessitating first containerization and then Kubernetes alignment.
+      - Developed infrastructure monitoring and logging frameworks to enhance system observability.
+      - Participated in on-call rotation. Every 3 weeks, I was on-call to function as the first party to be alerted to an outage. Monitoring tools included Grafana and Prometheus.
+      - Served as incident commander during high-severity outages, improving communication among affected parties.
+      - Implemented changes to incident management processes that demonstrably improved MTTR < 30min
+      - Organization was primarily an acquirer, purchasing companies for their intellectual property and then rebranding as their own.
+      - Participated on the Change Control Board, ensuring rich interdepartmental communication and ensuring conflicts are addressed before implementation
+      - Participated in formal change requests, including the securing of buy-in from stakeholders and decisionmakers
+      - Developed pipelines that automatically ran whenever a pull request was created. These pipelines ran Snyk on the contributed code to find general issues, and typically a language-specific static analysis tool.
+      - Used Sentinel on creation of PR to ensure personnel were writing their Terraform documents in alignment with corporate policies.
+      - Developed scheme that, upon creation of PR containing a minimum number of changes, would submit contributed code to ChatGPT, and request suggestions to improve the code in areas of security, efficiency and potential for bugs.
+      - Developed nightly pipeline that would run all Terraform documents and generate a drift report, capturing cases where manual human intervention was not reversed to realign with corporate policies. This allowed for some occasional human tweaking of services and gave operators the ability to temporarily bypass change controls, if the situation demanded it (such as in an outage).
+      - Conducted monthly reconstruction tests, in which we would destroy all resources in a development account and have our configuration management suite (Terraform Ansible, ArgoCD) rebuild the entire environment from the ground-up. This served as confirmation that systems could be restored in a worst-case-scenario disaster.
+      - Conducted quarterly DR tests. In these tests, a critical fault would be injected into a development environment, engaging automated disaster recovery routines, such as pivoting to operations in a different region.
+    Technologies:
+      - Kubernetes
+      - AWS
+      - AWS EC2
+      - AWS Image Builder
+      - AWS CloudWatch
+      - AWS RDS
+      - AWS Backup
+      - AWS Fault Injection
+      - AWS Organizations
+      - AWS IAM
+      - AWS IAM Identity center
+      - AWS Multi-account architectures
+      - AWS EKS
+      - AWS ECS
+      - AWS Security Hub
+      - AWS Artifact
+      - Amazon GuardDuty
+      - AWS Config
+      - AWS CloudTrail
+      - AWS S3
+      - AWS Shield
+      - AWS Secrets Manager
+      - AWS ACM
+      - AWS ELB
+      - AWS ALB
+      - AWS Lambda
+      - AWS VPC
+      - AWS Tranmsit Gateway
+      - AWS VPC Flow Logs
+      - Amazon Inspector
+      - Snyk
+      - GitHub
+      - GitHub Actions
+      - CircleCI
+      - Elixir
+      - "C++"
+      - Erlang
+      - Java
+      - "C#"
+      - ".NET"
+      - Docker
+      - ArgoCD
+      - Rancher
+      - Teleport
+      - Sentry.io
+      - DataDog
+      - Elasticsearch
+      - Azure (elementary)
+      - Atlassian Jira
+      - Atlassian StatusPage
+      - Atlassian BitBucket
+      - Grafana
+      - Prometheus
+      - Snowflake
+      - Redshift
+      - PHP
+      - MySQL
+      - Postgres
+      - TLS
+      - OpenSSL
+      - Certificate Hierarchy
+      - Ubuntu Linux
+      - Debian Linux
+      - Windows Server
+
+  "AZ Crown Investments":
+    Title: "Trusted Advisor - Development Operations"
+    When: "2020-2023"
+    Location: "Remote (US-based)"
+    Facts:
+      - Hired as leadership was impressed by my responsible disclosure of major security vulnerability which exposed several years of call center audio files to the public (S3 bucket with directory browsing and anonymous access enabled); value of breached information estimated at $17m based on sale prices of similar records found on the "dark web"
+      - AZ Crown, as an investment company, owned dozens of startups; my role was to assist in the assessment and mitigation of operational and personnel challenges experienced by its child organizations
+      - Reduced $900k in annual expenditure by migrating one organizations' data pipelines from AWS Glue to Snowflake
+      - Developed set of Ansible playbooks that build a heavily-customized Windows Server 2012 EC2 image. These images, when built manually, took up to a week due to the large number of steps involved. The goal of this customization was mainly cybersecurity; Windows Server 2012 is out of support and thus it's prudent to minimize all possible attack surfaces.
+      - Led total rebuild of major line-of-business application. This monolithic application functioned as a CRM, financial transaction, credit checking, call center management and human resources application. To optimize value, I adopted a "Strangler" microservice refactoring pattern, enabling newly built capabilities to be progressively released to the business instead of waiting for the full rewrite (which took 2 years).
+      - Designed controls and infrastructure necessary to host a financial transaction processing application expected to transact $55,000,000 annually. This environment achieved full first-pass PCI-DSS certification by a security assessor.
+      - Navigated adversarial nature of my position (as I had hire/fire capability) by developing proofs-of-concept and seeking cross-pollination opportunities and thus acquiring buy-in not only from management, but engineering personnel as well. I felt it was important that all stakeholders, including the builders, of a system should buy-in to an idea.
+      - Led the technical development of a proprietary predictive credit scoring model that assessed an applicants probability to default based on several hundred distinct features collected from their full credit profile and other background checks.
+      - Accelerated customer onboarding at one firm from 2-4 weeks to about 4 hours through Terraform. These Terraform documents would configure a comnplete working tenant and configure their Snowflake data pipelines based on configured values.
+      - Migrated a critical financial transasction and credit scoring application from a datacenter cage to AWS. This reduced cost-per-customer by approximately 90% while simultaneously ensuring five-nines uptime and improved performance. Used AWS Database Migration Services to accomplish this goal.
+      - Migrated 200+ cron/bash jobs to AWS Lambda and ECS scheduled tasks, safeguarding reliability as the platform was containerized.
+      - Led recruitment, onboarding and training of a full technology organization that was to replace a poorly functioning technology organization
+      - Developed circuit breakers and automated failover schemes that would enable business continuity in the event of an outage
+      - Complementing "strangler" refactoring pattern, I used Lambda@Edge to route requests based on request criteria. This enabled a user of the system to seamlessly navigate between legacy and newly written codebase, enabling new features as they become available instead of waiting for the full application to be rewritten.
+      - Depending on the startup, I applied different compliance profiles--such as CIS, NIST and PCI-DSS benchmarks--to identify gaps in compliance
+      - Adopted a "modified" SAFe change request process that was flexible yet ensured buy-in for all changes was secured from leadership and engineering personnel as well as eventual internal consumers of a system
+      - Derisking, improving business processes in addition to basic accountability, such as the completion of a CIS benchmark and coverage of discovered gaps, allowed one portfilio startup to be sold to an acquirer for a value nearly 10x its original purchase price
+      - Implemented scheme to monitor DORA metrics and chart up/down trends. This enabled me to support the value proposition of a proposed change, provide continuing validation for past changes, and build political capital within the organization.
+      - Did not "directly" oversee any personnel; my role was advisory and often called into service when the investment company had a concern about one of its startups. Operators of these startups were instructed to provide me with whatever I needed to conduct my assessments.
+    Technologies:
+      - AWS
+      - AWS EC2
+      - AWS Image Builder
+      - AWS CloudWatch
+      - AWS RDS
+      - AWS Backup
+      - AWS Fault Injection
+      - AWS Organizations
+      - AWS IAM
+      - AWS IAM Identity center
+      - AWS Multi-account architectures
+      - AWS ECS
+      - AWS Security Hub
+      - AWS Artifact
+      - Amazon GuardDuty
+      - AWS Config
+      - AWS CloudTrail
+      - AWS S3
+      - AWS Shield
+      - AWS Secrets Manager
+      - AWS ACM
+      - AWS ELB
+      - AWS ALB
+      - AWS Lambda
+      - AWS VPC
+      - AWS Tranmsit Gateway
+      - AWS VPC Flow Logs
+      - AWS WorkSpaces
+      - AWS CloudFront
+      - Windows 10
+      - Windows Server 2012
+      - Chocolatey
+      - Ansible
+      - CentOS
+      - RHEL
+      - VMWare ESXi
+      - VMWare Fusion
+      - VMWare vSphere
+      - Veeam
+      - Rackspace
+      - Dedicated Servers
+      - SSH
+      - MySQL
+      - Snowflake
+      - Redshift
+      - AWS Glue
+      - PySpark
+      - Node.js
+      - "C#"
+      - GitHub
+      - GitHub Actions
+      - GitLab
+      - BitBucket Pipelines
+      - Bash
+      - PowerShell
+      - Java
+      - Apache Tomcat
+      - ColdFusion 11
+      - Apache Web Server
+      - nginx
+      - PHP
+    "Halight Inc.":
+      Title: "Release Engineer"
+      When: "2019-2020"
+      Location: "Windsor, Ontario"
+      Facts:
+        - Introduced DevOps concepts such as configuration management, DORA metrics, continuous integration and deployment, automated testing and containerization
+        - Consolidated nearly 200 customer specific forks into five maintainable whitelabel codebases by mapping repository lineage, merging custom features and critical patches, and drastically reducing maintenance overhead.
+        - Reduced platform compute costs by ~60% by containierizing application and running on a fleet of ECS services backed by EC2 instances
+        - Used Ansible to manage the build process for a local developer environment container, reducing onboarding times from ~2 weeks to ~3 days
+        - Developed testing process consisting of automatically built and self-sufficient containers that could be booted by QA personnel to test new features as they're released
+        - Implemented Selenium to A/B test and highlight changes in user interfaces whenever a new feature is released
+        - Worked with IT to develop transparent redirection scheme that addressed accidental delivery of emails produced within developer test environments. This scheme intercepted egress SMTP traffic at the network level and redirected it to an internal email system that all development personnel could access.
+      Technologies:
+        - CentOS
+        - RHEL
+        - Atlassian BitBucket
+        - Atlassian Jira
+        - BitBucket Pipelines
+        - Windows 7
+        - Ubuntu Linux
+        - Selenium
+        - Ansible
+        - Configuration Management
+        - DORA Metrics
+        - CI/CD
+        - Automated testing
+        - Docker
+        - Containerization

@@ -1,0 +1,250 @@
+Instructions:
+  - We are going to be looking for job postings (full-time, part-time or fixed-pay contract) together.
+  - Use all available avenues to conduct your search.
+  - I will also consider fixed-length contracts posted to RFP boards for which I may qualify as an independent freelancer.
+  - Observe search constraints defined in Search key (below).
+  - For search constraints that cannot interface through a platforms search function, perform a best effort search and remove postings from selections post-retrieval.
+  - Invent and use possible search terms using the work experience and education described in this document. For example, "AWS", "DevOps" and "Platform Engineer" are good terms.
+  - Also search for job postings that I may qualify for based on transferable skills. For example, a systems analyst role may be DevOps-heavy and as such I may qualify.
+  - We're going to do a paging mechanism. Post up to the number of jobs set in the Search->PerPage key in this document, and when I say "Next" continue to search for and collect another set of jobs.
+  - For each job, explain why you believe I would be a good fit.
+  - If possible, search sites like Glassdoor to assess turnover, employee retention and employee satisfaction of a company making a job posting. If a company has particularly poor employee satisfaction or high turnover, mention this.
+  - For each job posting, ensure to post a URL I can click on to access the posting.
+Search:
+  PerPage: 50
+  Constraints: # Constrain selection based on these constraints
+    AgeMaximum: 3 days # Do not select job ads older than this.
+    AppliedMaximum: 200 # If able to determine how many have applied to job posting, do not select job ads where more than this number have applied. If unable to determine, do not constrain based on this factor.
+    Countries: # Constrain job postings to these countries.
+      - Canada
+      - British Commonwealth Countries
+      - Ukraine
+      - English must be the dominant language
+      - GDP based on purchasing power parity must exceed $50,000 USD in the country for which the job is posted, unless the job posting clearly states the salary is at least $100,000.
+      - Countries for which I may qualify for work authorization based on my credentials. For example, I am not eligible for a TN work authorization in the US as I do not possess a graduates degree.
+      - If the job ad explicitly says they will only hire people that reside in a country other than my country, exclude it.
+    NotCountries: # Do not select job postings from these countries.
+      - United States # Postings tend to be unclear on whether they will accept Canadians due to tariffs. In my opinion, applying to US companies is currently a waste of time.
+    NotCompanies: # Do not list job postings from the following companies.
+      - Lumenalta # Overly complicated application process; I refuse to spend 8 hours on a job posting without an interview first.
+Profile:
+  FullName: "Brandon Gould"
+  Email: "brandongould86@outlook.com"
+  LinkedIn: "https://www.linkedin.com/in/brandon-gould-a3237318"
+  GitHub: "https://github.com/vsysio-bgould"
+  Location: "Renfrew, Ontario, Canada"
+  Willing to relocate: false
+  Citizenship: Canadian Citizen
+ProfessionalSummary: "Cloud Infrastructure & DevOps Engineer with 9+ years of experience designing scalable, reliable, and secure infrastructure solutions. Expertise in cloud networking, Infrastructure-as-Code, and automation. Proven ability to optimize system performance, lead incident response efforts, and ensure security compliance in highly regulated industries. Passionate about enabling teams through self-service platforms and Infrastructure-as-Code methodologies."
+Education:
+  - Institution: St. Lawrence College
+    When: "2009-2011"
+    Accreditation: Diploma
+    Program: Computer Networking and Technical Support
+  - Institution: Amazon Web Services
+    When: "2020-2023"
+    Accreditation: Certificate
+    Program: AWS-Certified Solutions Architect Associate
+    Status: Expired
+WorkExperience:
+  "Triage Staffing":
+    Title: "Platform Engineer"
+    When: "2023-2024"
+    Location: "Remote (US-based)"
+    Facts:
+      - Hired as part of executive initiative to coalesce, centralize and normalize development, operations and hosting practices for approximately 50 different codebases representing about 10 proprietary line-of-business applications.
+      - Contributed to migrations of codebases to Kubernetes cluster, using ArgoCD, AWS EKS and rancher, centralizing controls and processes while simultaneously improving DORA metrics such as MTTR.
+      - Many codebases originally hosted on virtual machines and dedicated hosting, necessitating first containerization and then Kubernetes alignment.
+      - Developed infrastructure monitoring and logging frameworks to enhance system observability.
+      - Participated in on-call rotation. Every 3 weeks, I was on-call to function as the first party to be alerted to an outage. Monitoring tools included Grafana and Prometheus.
+      - Served as incident commander during high-severity outages, improving communication among affected parties.
+      - Implemented changes to incident management processes that demonstrably improved MTTR < 30min
+      - Organization was primarily an acquirer, purchasing companies for their intellectual property and then rebranding as their own.
+      - Participated on the Change Control Board, ensuring rich interdepartmental communication and ensuring conflicts are addressed before implementation
+      - Participated in formal change requests, including the securing of buy-in from stakeholders and decisionmakers
+      - Developed pipelines that automatically ran whenever a pull request was created. These pipelines ran Snyk on the contributed code to find general issues, and typically a language-specific static analysis tool.
+      - Used Sentinel on creation of PR to ensure personnel were writing their Terraform documents in alignment with corporate policies.
+      - Developed scheme that, upon creation of PR containing a minimum number of changes, would submit contributed code to ChatGPT, and request suggestions to improve the code in areas of security, efficiency and potential for bugs.
+      - Developed nightly pipeline that would run all Terraform documents and generate a drift report, capturing cases where manual human intervention was not reversed to realign with corporate policies. This allowed for some occasional human tweaking of services and gave operators the ability to temporarily bypass change controls, if the situation demanded it (such as in an outage).
+      - Conducted monthly reconstruction tests, in which we would destroy all resources in a development account and have our configuration management suite (Terraform Ansible, ArgoCD) rebuild the entire environment from the ground-up. This served as confirmation that systems could be restored in a worst-case-scenario disaster.
+      - Conducted quarterly DR tests. In these tests, a critical fault would be injected into a development environment, engaging automated disaster recovery routines, such as pivoting to operations in a different region.
+    Technologies:
+      - Kubernetes
+      - AWS
+      - AWS EC2
+      - AWS Image Builder
+      - AWS CloudWatch
+      - AWS RDS
+      - AWS Backup
+      - AWS Fault Injection
+      - AWS Organizations
+      - AWS IAM
+      - AWS IAM Identity center
+      - AWS Multi-account architectures
+      - AWS EKS
+      - AWS ECS
+      - AWS Security Hub
+      - AWS Artifact
+      - Amazon GuardDuty
+      - AWS Config
+      - AWS CloudTrail
+      - AWS S3
+      - AWS Shield
+      - AWS Secrets Manager
+      - AWS ACM
+      - AWS ELB
+      - AWS ALB
+      - AWS Lambda
+      - AWS VPC
+      - AWS Tranmsit Gateway
+      - AWS VPC Flow Logs
+      - Amazon Inspector
+      - Snyk
+      - GitHub
+      - GitHub Actions
+      - CircleCI
+      - Elixir
+      - "C++"
+      - Erlang
+      - Java
+      - "C#"
+      - ".NET"
+      - Docker
+      - ArgoCD
+      - Rancher
+      - Teleport
+      - Sentry.io
+      - DataDog
+      - Elasticsearch
+      - Azure (elementary)
+      - Atlassian Jira
+      - Atlassian StatusPage
+      - Atlassian BitBucket
+      - Grafana
+      - Prometheus
+      - Snowflake
+      - Redshift
+      - PHP
+      - MySQL
+      - Postgres
+      - TLS
+      - OpenSSL
+      - Certificate Hierarchy
+      - Ubuntu Linux
+      - Debian Linux
+      - Windows Server
+
+  "AZ Crown Investments":
+    Title: "Trusted Advisor - Development Operations"
+    When: "2020-2023"
+    Location: "Remote (US-based)"
+    Facts:
+      - Hired as leadership was impressed by my responsible disclosure of major security vulnerability which exposed several years of call center audio files to the public (S3 bucket with directory browsing and anonymous access enabled); value of breached information estimated at $17m based on sale prices of similar records found on the "dark web"
+      - AZ Crown, as an investment company, owned dozens of startups; my role was to assist in the assessment and mitigation of operational and personnel challenges experienced by its child organizations
+      - Reduced $900k in annual expenditure by migrating one organizations' data pipelines from AWS Glue to Snowflake
+      - Developed set of Ansible playbooks that build a heavily-customized Windows Server 2012 EC2 image. These images, when built manually, took up to a week due to the large number of steps involved. The goal of this customization was mainly cybersecurity; Windows Server 2012 is out of support and thus it's prudent to minimize all possible attack surfaces.
+      - Led total rebuild of major line-of-business application. This monolithic application functioned as a CRM, financial transaction, credit checking, call center management and human resources application. To optimize value, I adopted a "Strangler" microservice refactoring pattern, enabling newly built capabilities to be progressively released to the business instead of waiting for the full rewrite (which took 2 years).
+      - Designed controls and infrastructure necessary to host a financial transaction processing application expected to transact $55,000,000 annually. This environment achieved full first-pass PCI-DSS certification by a security assessor.
+      - Navigated adversarial nature of my position (as I had hire/fire capability) by developing proofs-of-concept and seeking cross-pollination opportunities and thus acquiring buy-in not only from management, but engineering personnel as well. I felt it was important that all stakeholders, including the builders, of a system should buy-in to an idea.
+      - Led the technical development of a proprietary predictive credit scoring model that assessed an applicants probability to default based on several hundred distinct features collected from their full credit profile and other background checks.
+      - Accelerated customer onboarding at one firm from 2-4 weeks to about 4 hours through Terraform. These Terraform documents would configure a comnplete working tenant and configure their Snowflake data pipelines based on configured values.
+      - Migrated a critical financial transasction and credit scoring application from a datacenter cage to AWS. This reduced cost-per-customer by approximately 90% while simultaneously ensuring five-nines uptime and improved performance. Used AWS Database Migration Services to accomplish this goal.
+      - Migrated 200+ cron/bash jobs to AWS Lambda and ECS scheduled tasks, safeguarding reliability as the platform was containerized.
+      - Led recruitment, onboarding and training of a full technology organization that was to replace a poorly functioning technology organization
+      - Developed circuit breakers and automated failover schemes that would enable business continuity in the event of an outage
+      - Complementing "strangler" refactoring pattern, I used Lambda@Edge to route requests based on request criteria. This enabled a user of the system to seamlessly navigate between legacy and newly written codebase, enabling new features as they become available instead of waiting for the full application to be rewritten.
+      - Depending on the startup, I applied different compliance profiles--such as CIS, NIST and PCI-DSS benchmarks--to identify gaps in compliance
+      - Adopted a "modified" SAFe change request process that was flexible yet ensured buy-in for all changes was secured from leadership and engineering personnel as well as eventual internal consumers of a system
+      - Derisking, improving business processes in addition to basic accountability, such as the completion of a CIS benchmark and coverage of discovered gaps, allowed one portfilio startup to be sold to an acquirer for a value nearly 10x its original purchase price
+      - Implemented scheme to monitor DORA metrics and chart up/down trends. This enabled me to support the value proposition of a proposed change, provide continuing validation for past changes, and build political capital within the organization.
+      - Did not "directly" oversee any personnel; my role was advisory and often called into service when the investment company had a concern about one of its startups. Operators of these startups were instructed to provide me with whatever I needed to conduct my assessments.
+    Technologies:
+      - AWS
+      - AWS EC2
+      - AWS Image Builder
+      - AWS CloudWatch
+      - AWS RDS
+      - AWS Backup
+      - AWS Fault Injection
+      - AWS Organizations
+      - AWS IAM
+      - AWS IAM Identity center
+      - AWS Multi-account architectures
+      - AWS ECS
+      - AWS Security Hub
+      - AWS Artifact
+      - Amazon GuardDuty
+      - AWS Config
+      - AWS CloudTrail
+      - AWS S3
+      - AWS Shield
+      - AWS Secrets Manager
+      - AWS ACM
+      - AWS ELB
+      - AWS ALB
+      - AWS Lambda
+      - AWS VPC
+      - AWS Tranmsit Gateway
+      - AWS VPC Flow Logs
+      - AWS WorkSpaces
+      - AWS CloudFront
+      - Windows 10
+      - Windows Server 2012
+      - Chocolatey
+      - Ansible
+      - CentOS
+      - RHEL
+      - VMWare ESXi
+      - VMWare Fusion
+      - VMWare vSphere
+      - Veeam
+      - Rackspace
+      - Dedicated Servers
+      - SSH
+      - MySQL
+      - Snowflake
+      - Redshift
+      - AWS Glue
+      - PySpark
+      - Node.js
+      - "C#"
+      - GitHub
+      - GitHub Actions
+      - GitLab
+      - BitBucket Pipelines
+      - Bash
+      - PowerShell
+      - Java
+      - Apache Tomcat
+      - ColdFusion 11
+      - Apache Web Server
+      - nginx
+      - PHP
+    "Halight Inc.":
+      Title: "Release Engineer"
+      When: "2019-2020"
+      Location: "Windsor, Ontario"
+      Facts:
+        - Introduced DevOps concepts such as configuration management, DORA metrics, continuous integration and deployment, automated testing and containerization
+        - Consolidated nearly 200 customer specific forks into five maintainable whitelabel codebases by mapping repository lineage, merging custom features and critical patches, and drastically reducing maintenance overhead.
+        - Reduced platform compute costs by ~60% by containierizing application and running on a fleet of ECS services backed by EC2 instances
+        - Used Ansible to manage the build process for a local developer environment container, reducing onboarding times from ~2 weeks to ~3 days
+        - Developed testing process consisting of automatically built and self-sufficient containers that could be booted by QA personnel to test new features as they're released
+        - Implemented Selenium to A/B test and highlight changes in user interfaces whenever a new feature is released
+        - Worked with IT to develop transparent redirection scheme that addressed accidental delivery of emails produced within developer test environments. This scheme intercepted egress SMTP traffic at the network level and redirected it to an internal email system that all development personnel could access.
+      Technologies:
+        - CentOS
+        - RHEL
+        - Atlassian BitBucket
+        - Atlassian Jira
+        - BitBucket Pipelines
+        - Windows 7
+        - Ubuntu Linux
+        - Selenium
+        - Ansible
+        - Configuration Management
+        - DORA Metrics
+        - CI/CD
+        - Automated testing
+        - Docker
+        - Containerization
