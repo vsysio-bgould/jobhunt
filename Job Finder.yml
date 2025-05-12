@@ -13,11 +13,11 @@ Instructions:
   - Highlight any jobs that would be an especially strong fit
   - Also highlight jobs that were posted less than 4 hours ago AND less than 10 persons have applied (do not highlight if you cannot determine how many have applied)
   - Place results into a table. Include a special notes column.
-  - If root key "Export->Do" is true, export resulting table as a spreadsheet, observing the Columns also listed under the Export key.
+  - If root key "Export->Do" is true, export resulting table as a spreadsheet in the described format (CSV or excel), observing the Columns also listed under the Export key.
   - If a job only lists one Cloud provider (Azure, GCP, OCI, AWS etc.) and this provider is not listed as a qualification in this document, consider this job posting disqualified as skills do not transfer easily between providers
-  -
 Export:
   Do: true
+  Format: CSV
   Multiline: true # Use multi-line wherever sensible within cells?
   JustifyCells: true # Should cell width be set so content fits?
   Columns:
@@ -36,7 +36,7 @@ Search:
   RemoteOnly: true # Only look for jobs that indicate remote work
   PerPage: 50
   Constraints: # Constrain selection based on these constraints
-    AgeMaximum: 7 days # Do not select job ads older than this.
+    AgeMaximum: 3 days # Do not select job ads older than this.
     AppliedMaximum: 200 # If able to determine how many have applied to job posting, do not select job ads where more than this number have applied. If unable to determine, do not constrain based on this factor.
     Countries: # Constrain job postings to these countries.
       - Canada

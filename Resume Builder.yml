@@ -26,7 +26,7 @@ ResumeFormat:
     SectionName: Professional Experience
     Notes:
       - Generate 5 bullet points for the two most recent jobs and no more than 3 bullet points for others.
-      - Brevity in this section is strongly favored and contractions like less-than-greater-than signs may be use, but do not compromise on detail. For example, if intending to support and describe the impact of something on a metric like MTTR, you can say, 'Improved MTTR <30min' instead of 'Improved MTTR to under 30 minutes'
+      - Brevity in this section is favored, but do not compromise on detail.
   4:
     SectionName: Selected Achievements
     Notes:
@@ -247,3 +247,13 @@ WorkExperience:
         - Automated testing
         - Docker
         - Containerization
+OpenSourceProjects:
+  - Name: "HomeCA"
+    URL: "https://github.com/vsysio-bgould/homeca"
+    Description: "HomeCA is an open-source, self-service CA solution I've developed for myself to build a certificate hierarchy within my home lab environment. It aims to simplify this process, as tools like OpenSSL can be very nuanced, and many security options (such as denying signing authority for end-user certificates) need to be implicitly defined.."
+  - Name: "KubeSprout"
+    URL: "https://github.com/vsysio-bgould/kubesprout"
+    Description: "KubeSprout is the product of my learning Kubernetes. It took inspiration from Kelsey Hightowers' guide 'Kubernetes the Hard Way' and built upon it by automating the process of building a whole cluster manually (ie. poking into config files, downloading binaries etc) instead of using tools like kubeadm."
+  - Name: "jobhunt"
+    URL: "https://github.com/vsysio-bgould/jobhunt"
+    Description: "I've used LLMs extensively to optimize my job search. This repository contains two YAML files: One seeks out jobs based on given criteria, while another generated an optimized resume that GPT believes is the best fit for the job posting."
