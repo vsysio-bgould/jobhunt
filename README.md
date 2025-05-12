@@ -1,96 +1,84 @@
-# THE FANTASTIC JOB FINDER 2000
+# Fantastic Job Finder 2000
+*"I never said I was great at naming things." — someone, probably*
 
-*"I never said I was great at naming things." -Some guy, probably*
+> **YAML‑powered job‑search workflows for ChatGPT & other LLMs**
 
-## What is this?
+## Table of Contents
+1. [Overview](#overview)
+2. [Prerequisites](#prerequisites)
+3. [Job‑Finder Workflow](#job-finder-workflow)  
+   &nbsp;&nbsp;• [Key Features](#key-features)  
+   &nbsp;&nbsp;• [Quick Tips](#quick-tips)  
+   &nbsp;&nbsp;• [Quick‑Start](#quick-start)
+4. [Resume Builder](#resume-builder)
+5. [License](#license)
 
-This repository contains a set of YAML files designed to optimize my job search.
-These YAML files can be pasted into a conversation with an LLM, such as ChatGPT,
-and they will be faithfully executed.
+---
+
+## Overview
+This repo ships **drop‑in YAML playbooks** that steer an LLM (e.g., ChatGPT) through every phase of a technical job search—finding openings, flagging red/green signals, and prepping application materials.  
+Paste a YAML file into ChatGPT and watch the model work.
+
+---
 
 ## Prerequisites
+| Requirement | Notes |
+|-------------|-------|
+| ChatGPT Plus/Pro (or comparable LLM) | Free tier may throttle long searches |
+| Keyboard & display | You know the drill |
+| Heartbeat & patience | Large searches can take a few minutes |
 
-* ChatGPT (or other LLM) account, preferably "Plus" or even "Pro." The free tier is
-  probably insufficient for the amount of work we'll be throwing at it.
-* Keyboard.
-* Monitor.
-* Heartbeat.
-* Patience.
+---
 
-## Find Jobs (Job Finder.yaml)
+## Job‑Finder Workflow (`Job Finder.yaml`) <a id="job-finder-workflow"></a>
 
-This document instructs GPT to locate job postings that may be a fit for your
-achievements and experience.
+### Key Features <a id="key-features"></a>
+- **Multi‑source search** — LinkedIn, Indeed, company sites, Reddit, niche forums, and more.
+- **Fit scoring** — Flags standout roles and explains the rationale.
+- **Company due diligence** — Surfaces Glassdoor reviews, layoff news, morale cues, etc.
+- **Turnover insights** — Highlights churn and speculates on root causes.
+- **Strict skill matching** — Treats AWS ≠ Azure ≠ GCP (no fuzzy “cloud” equivalence).
+- **Early‑bird alerts** — Marks postings < 4 h old—beat the applicant deluge.
+- **Applicant‑count filter** — Skips roles already flooded with candidates.
+- **Work‑authorization filter** — Focuses on where you can *legally* work, not *where* you live. Finds remote roles out-of-country.
+- **Title agnostic** — Detects relevant roles no matter how quirky the title.
+- **Paging** — Stays within context limits; reply **Next** for more results.
+- **Export** — One‑click CSV/XLSX download.
 
-### Features
+### Quick Tips <a id="quick-tips"></a>
 
-* Finds jobs based on the information you wrote into the YAML file.
-* Searches job boards (LinkedIn, Indeed, etc.) but also searches corporate websites
-  for jobs that aren't on job boards yet. It also considers other avenues--one time,
-  it sent me a job posted to Reddit. Another time, it sent me a link to a Crypto
-  forum post. Very cool.
-* Flags jobs that are a particularly strong fit, and will explain why it believes so.
-* Queries sites like Glassdoor and other sources to identify interesting findings that
-  could be red or green flags for an applicant. For example, it will flag reports of 
-  layoffs, poor morale and high turnover. Conversely, if it finds good reports, it
-  will post those findings as well.
-* Assesses companies for high turnover, and will try to speculate as to the cause.
-* Applies a disqualifying bias for persons who have strong experience in one Cloud 
-  platform but not another (AWS, Azure, etc.). It will not consider, for instance,
-  "AWS EC2" to be a transferable skill for "Azure Virtual Machines" as those are two
-  distinct services.
-* Highlights jobs that were recently posted less than 4 hours ago--before they've been
-  flooded with 7,698 applicants.
-* Disqualifies jobs where more than a configurable number have already applied.
-* Constrains results not to geographic area but to work authorization eligibility. 
-  For example, in my case, it's much easier for me to work remotely for a company in
-  the British Commonwealth than the United States.
-* Does not discriminate based on job title--it's not uncommon for a class of work to 
-  carry many titles. DevOps is an example of this; I have seen DevOps jobs entitled as
-  Systems Analyst, Release Coordinator, Magical Wizard, Server Operator, etc.
-* A paging mechanism intended to let it optimize its own resources. A search this large
-  is likely to exceed context windows, causing hallucinations (it started listing
-  mortician  jobs for me once--har har), and so it will only process a handful of jobs
-  at a time.  When ready for the next batch, say "Next"
-* Exports resulting findings as CSV or XLSX.
+- **Be specific.** The more detail you pack into your YAML, the sharper the matches.
+- **List only clouds you truly know.** A strict AWS ≠ Azure ≠ GCP bias weeds out mismatches in your favor.
+- **Extend the schema** for books, patents, open‑source work—whatever sells your story:
 
-### Quick Tips
+  ~~~yaml
+  # Example: Author credits
+  Authoring:
+    - Name: "The Greatest Book Ever Written"
+      ISBN: "182920-3-299292"
+      Description: "Jeremy is an IT engineer who ..."
+      Topics: [DevOps, AWS, Web Servers]
+  ~~~
 
-**Be as detailed as possible** in describing your background
+  <sup>*Tip:* Inline comments (`# like this`) help the LLM interpret custom sections.</sup>
 
-Don't mention experience with a Cloud provider (AWS, Azure etc.) **unless you have
-  strong experience with it**--leverage its disqualifying bias to find you the best fitting roles.
+### Quick‑Start <a id="quick-start"></a>
+1. Copy `Job Finder.yaml` (or start with the sample) and edit your details.
+2. Open ChatGPT and select **o3** or better.
+3. Paste the YAML inside a fenced block:
+   ~~~yaml
+   # your YAML here
+   ~~~
+4. Wait—runs can take up to **10 minutes**.
+5. Review suggested postings; download CSV/XLSX if desired.
+6. Type **Next** for the next page.
 
-**Feel free to add sections to widen your search.** For example, if you published a book, you could include:
+---
 
-```yaml
-Authoring: # Books I've written
-  - Name: "The Greatest Book Ever Written"
-    ISBN: "182920-3-299292"
-    Description: "Jeremy is an IT engineer who ..."
-    Topics:
-      - DevOps
-      - IT
-      - AWS
-     ( ... )
-      - Web Servers
-```
+## Resume Builder (`Resume Builder.yaml`) <a id="resume-builder"></a>
+*Coming soon — generate ATS‑friendly, tailored resumes in seconds.*
 
-**You can hint as to the purpose of a section using a comment.** See preceding authorship example.
+---
 
-### Quickstart
-
-1. Copy the included sample YAML files and modify them to suit your circumstances.
-2. Open a conversation with ChatGPT.
-3. Ensure the model selected is "o3" or better.
-4. Paste the entire YAML file into a code fence (ie. 3 backticks followed by yaml,
-   the yaml itself, and then 3 backticks to close the block)
-5. Wait a while - it takes up to 10 minutes usually.
-6. It will produce a list of job postings that it believes you're a good fit for.
-7. Optionally download the generated CSV or Excel sheet.
-8. When ready for the next batch, say "Next".
-
-## Build Resume (Resume Builder.yaml)
-
-NOTE: Section under construction.
-
+## License <a id="license"></a>
+MIT — see [LICENSE](LICENSE) for details.
