@@ -17,6 +17,7 @@ Instructions:
   - "After I submit this file to you, confirm that you understand the purpose of this file and my instructions therein by responding with the specific phrase 'I understand what you wish for me to do' and then restate these instructions and all details, such as employment history, and request my confirmation. Additionally, provide several examples of in what ways you will improve and cater my writing to target an application to a fictitious: Cryptocurrency startup, a national bank, an LMS SaaS and a national railroad company."
   - For metrics like MTTR, deployment frequency etc. if a metric is absent, this is likely because the resulting improvement could not be reliably determined or was mixed in with many other changes that could've contributed to the improvement. Thus, we can invent fictional improvement results, though they must be plausible.
   - Assume that I do not possess skills that I haven't listed here nor have confirmed in our conversation
+  - If a user supplies special instructions, ask the user if they want the instructions to apply to all generated materials, or just to the next material.
 ResumeFormat:
   1:
     SectionName: Contact Information

@@ -125,8 +125,37 @@ details.*
 
 ---
 
-## Resume Builder (`Resume Builder.yaml`) <a id="resume-builder"></a>
-*Coming soon — generate ATS‑friendly, tailored resumes in seconds.*
+## Resume Builder (`Resume Builder.yaml`) <a id="resume-builder"></a>
+
+### Key Features <a id="key-features-resume"></a>
+- **ATS-aware layout** — Generates résumés that parse cleanly in Workday, Greenhouse, Lever, iCIMS, and other major applicant-tracking systems.
+- **Role-tailored emphasis** — Pulls the bullets, metrics, and keywords from your YAML that most closely match *this* job description—no more generic “kitchen-sink” résumé.
+- **Metric spotlighting** — Automatically surfaces quantifiable wins (e.g., “reduced AWS spend 32 %,” “cut deployment time 80 %”) to catch a screener’s eye.
+- **One- or two-page control** — Dial the length up or down without hand-editing.
+- **Template presets** — Choose Chronological, Hybrid, or Functional templates—each color-safe and printer-friendly.
+- **Version tracking** — Every résumé variant is stored as a diff in Git so you can roll back or audit changes.
+- **Guardrails against fabrication** — Uses only the facts in your YAML; see “Message to Employers” for the anti-hallucination rules.
+- **Export** — One-click download as PDF, Markdown, or DOCX (experimental).
+
+### Quick Tips <a id="quick-tips-resume"></a>
+- **Feed it numbers.** Recruiters love metrics; include cost savings, uptime gains, and delivery speed improvements in your YAML.
+- **Rank your skills.** An ordered list lets the builder decide what to keep when space is tight.
+- **Tag industries.** Label experience by domain (FinTech, MedTech, GovCloud) so the builder can echo the hiring company’s sector.
+- **Use inline comments.** `# like this` — they help the model interpret any custom fields you add.
+- **Audit generated resumes.** The builder is a helpful starting point, but it’s not perfect. Always review the output and make tweaks as needed.
+
+### Quick-Start <a id="quick-start-resume"></a>
+1. Copy `Resume Builder.yaml` (or start with the sample) and fill in your canonical data.
+2. Open ChatGPT (o3 or better).
+3. Paste the YAML inside a fenced block:
+   ~~~yaml
+   # your Resume Builder YAML here
+   ~~~  
+4. Wait until it confirms that it understands what you want it to do.
+5. Paste the job description. Raw text dump is usually OK--no need to clean it up, unless it's a horrible mess.
+6. Wait **30–60 seconds** for the formatted résumé preview.
+7. Provide special instructions to, for example, emphasize one priority fact about you.
+8. Ask for a **Cover letter** if you want it to generate a cover letter.
 
 ---
 
