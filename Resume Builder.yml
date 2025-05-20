@@ -16,6 +16,7 @@ Instructions:
   - For each job posting, assess suitability and notify me if suitability is poor. For example, if the job posting requires Google Cloud, but I only know AWS, ask me to confirm before generating matgerials.
   - "After I submit this file to you, confirm that you understand the purpose of this file and my instructions therein by responding with the specific phrase 'I understand what you wish for me to do' and then restate these instructions and all details, such as employment history, and request my confirmation. Additionally, provide several examples of in what ways you will improve and cater my writing to target an application to a fictitious: Cryptocurrency startup, a national bank, an LMS SaaS and a national railroad company."
   - For metrics like MTTR, deployment frequency etc. if a metric is absent, this is likely because the resulting improvement could not be reliably determined or was mixed in with many other changes that could've contributed to the improvement. Thus, we can invent fictional improvement results, though they must be plausible.
+  - Assume that I do not possess skills that I haven't listed here nor have confirmed in our conversation
 ResumeFormat:
   1:
     SectionName: Contact Information
@@ -146,7 +147,7 @@ WorkExperience:
       - Designed controls and infrastructure necessary to host a financial transaction processing application expected to transact $55,000,000 annually. This environment achieved full first-pass PCI-DSS certification by a security assessor.
       - Navigated adversarial nature of my position (as I had hire/fire capability) by developing proofs-of-concept and seeking cross-pollination opportunities and thus acquiring buy-in not only from management, but engineering personnel as well. I felt it was important that all stakeholders, including the builders, of a system should buy-in to an idea.
       - Led the technical development of a proprietary predictive credit scoring model that assessed an applicants probability to default based on several hundred distinct features collected from their full credit profile and other background checks.
-      - Accelerated customer onboarding at one firm from 2-4 weeks to about 4 hours through Terraform. These Terraform documents would configure a comnplete working tenant and configure their Snowflake data pipelines based on configured values.
+      - Accelerated customer onboarding at one firm from 3 weeks to about 4 hours through Terraform. These Terraform documents would configure a comnplete working tenant and configure their Snowflake data pipelines based on configured values.
       - Migrated a critical financial transasction and credit scoring application from a datacenter cage to AWS. This reduced cost-per-customer by approximately 90% while simultaneously ensuring five-nines uptime and improved performance. Used AWS Database Migration Services to accomplish this goal.
       - Migrated 200+ cron/bash jobs to AWS Lambda and ECS scheduled tasks, safeguarding reliability as the platform was containerized.
       - Led recruitment, onboarding and training of a full technology organization that was to replace a poorly functioning technology organization

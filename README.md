@@ -5,19 +5,62 @@
 
 ## Table of Contents
 1. [Overview](#overview)
-2. [Prerequisites](#prerequisites)
-3. [Job‑Finder Workflow](#job-finder-workflow)  
+2. [Message to Employers](#message-to-employers)
+3. [Prerequisites](#prerequisites)
+4. [Job‑Finder Workflow](#job-finder-workflow)  
    &nbsp;&nbsp;• [Key Features](#key-features)  
    &nbsp;&nbsp;• [Quick Tips](#quick-tips)  
    &nbsp;&nbsp;• [Quick‑Start](#quick-start)
-4. [Resume Builder](#resume-builder)
-5. [License](#license)
+5. [Resume Builder](#resume-builder)
+6. [License](#license)
 
 ---
 
 ## Overview
 This repo ships **drop‑in YAML playbooks** that steer an LLM (e.g., ChatGPT) through every phase of a technical job search—finding openings, flagging red/green signals, and prepping application materials.  
 Paste a YAML file into ChatGPT and watch the model work.
+
+---
+
+## Message to Employers <a id="message-to-employers"></a>
+
+### Why you might see an “AI-tailored” résumé
+I apply for highly varied DevOps, cloud-infrastructure, and platform-engineering roles.  
+Hand-crafting a brand-new résumé for every posting is slow and error-prone, while sending
+the **same** generic résumé everywhere does *you* a disservice: it buries the skills and
+accomplishments that matter most for *your* stack.
+
+This repo lets an LLM (ChatGPT o3 +) **re-order, trim, or expand** only the details that
+directly match your job description—no fluff, no irrelevant buzzwords. You get a concise,
+ATS-friendly document that surfaces the exact evidence you need to decide whether to
+interview me.
+
+### Where does the time saved go?  
+Straight back into professional growth—diving into new AWS releases, experimenting with
+emerging DevOps tooling, finishing cert renewals, and contributing to open-source
+projects that keep my skills (and therefore your future hire) ahead of the curve.
+
+### “But can an LLM hallucinate?” – Guardrails in place
+1. **Single source of truth.** Every data point (titles, dates, metrics, certs, GitHub
+   links, etc.) lives in the YAML files committed to this repo & my public profiles.
+2. **Strict schema.** The prompts forbid the model from inventing new fields or values;
+   it may *reformat* or *re-phrase* what’s already there, but it cannot fabricate facts.
+3. **Deterministic prompts.** Key sections (employment history, education, certs) are
+   regenerated verbatim from the authoritative YAML—only the *ordering* changes.
+4. **Human review.** I read every résumé before it leaves my desk; anything that slips
+   through is on me, not the model.
+5. **Audit trail.** All YAML and prompt files are version-controlled. If you ever want
+   the raw inputs that produced a given résumé, just ask.
+
+### What this means for you
+- **Faster screening.** The résumé you receive spotlights the exact tools, outcomes, and
+  domain knowledge your posting calls for.
+- **Full transparency.** You can inspect the YAML or replicate the prompt yourself.
+- **Zero embellishment.** Every bullet point traces back to verifiable work or public
+  commits. No “creative writing,” just curated facts.
+
+If you have questions about a particular claim, technology choice, or project, I’m happy
+to walk you through the underlying evidence—code, architecture diagrams, or references.
 
 ---
 

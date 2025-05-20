@@ -36,7 +36,7 @@ Search:
   RemoteOnly: true # Only look for jobs that indicate remote work
   PerPage: 50
   Constraints: # Constrain selection based on these constraints
-    AgeMaximum: 3 days # Do not select job ads older than this.
+    AgeMaximum: 1 day # Do not select job ads older than this.
     AppliedMaximum: 200 # If able to determine how many have applied to job posting, do not select job ads where more than this number have applied. If unable to determine, do not constrain based on this factor.
     Countries: # Constrain job postings to these countries.
       - Canada
