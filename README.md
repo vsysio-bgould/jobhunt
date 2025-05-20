@@ -11,7 +11,10 @@
    &nbsp;&nbsp;• [Key Features](#key-features)  
    &nbsp;&nbsp;• [Quick Tips](#quick-tips)  
    &nbsp;&nbsp;• [Quick‑Start](#quick-start)
-5. [Resume Builder](#resume-builder)
+5. [Resume Builder](#resume-builder)  
+   &nbsp;&nbsp;• [Key Features](#key-features-resume)  
+   &nbsp;&nbsp;• [Quick Tips](#quick-tips-resume)  
+   &nbsp;&nbsp;• [Quick‑Start](#quick-start-resume)
 6. [License](#license)
 
 ---
