@@ -24,43 +24,50 @@ Paste a YAML file into ChatGPT and watch the model work.
 
 ## Message to Employers <a id="message-to-employers"></a>
 
-### Why you might see an “AI-tailored” résumé
-I apply for highly varied DevOps, cloud-infrastructure, and platform-engineering roles.  
-Hand-crafting a brand-new résumé for every posting is slow and error-prone, while sending
-the **same** generic résumé everywhere does *you* a disservice: it buries the skills and
-accomplishments that matter most for *your* stack.
+Hiring managers and HR partners often ask why a candidate would let an AI system help
+shape their résumé. Here’s the thinking behind my approach.
 
-This repo lets an LLM (ChatGPT o3 +) **re-order, trim, or expand** only the details that
-directly match your job description—no fluff, no irrelevant buzzwords. You get a concise,
-ATS-friendly document that surfaces the exact evidence you need to decide whether to
-interview me.
+### Why I enlist AI
 
-### Where does the time saved go?  
-Straight back into professional growth—diving into new AWS releases, experimenting with
-emerging DevOps tooling, finishing cert renewals, and contributing to open-source
-projects that keep my skills (and therefore your future hire) ahead of the curve.
+- **Role-specific focus.** Every job ad uses its own mix of keywords and priorities.
+  Instead of sending you the same static résumé I give everyone else, I let an AI
+  reorganize my work history so the achievements most relevant to *your* posting rise
+  to the top. **You spend less time hunting for the details that matter.**
+- **Speed with purpose.** Classic advice tells candidates to rewrite a résumé for every
+  application; that can eat up hours per role. Off-loading the mechanical cutting,
+  pasting, and re-ordering to a language model frees those hours for higher-value
+  activities, such as studying the latest AWS releases, completing certification renewals, and
+  contributing code to open-source projects you can inspect. In short, the time saved
+  shows up as stronger skills when I join your team.
 
-### “But can an LLM hallucinate?” – Guardrails in place
-1. **Single source of truth.** Every data point (titles, dates, metrics, certs, GitHub
-   links, etc.) lives in the YAML files committed to this repo & my public profiles.
-2. **Strict schema.** The prompts forbid the model from inventing new fields or values;
-   it may *reformat* or *re-phrase* what’s already there, but it cannot fabricate facts.
-3. **Deterministic prompts.** Key sections (employment history, education, certs) are
-   regenerated verbatim from the authoritative YAML—only the *ordering* changes.
-4. **Human review.** I read every résumé before it leaves my desk; anything that slips
-   through is on me, not the model.
-5. **Audit trail.** All YAML and prompt files are version-controlled. If you ever want
-   the raw inputs that produced a given résumé, just ask.
+### How I keep the facts straight
+
+1. **Single source of truth.** All titles, dates, certifications, project metrics, and
+   public links live in one structured file inside this repository.
+2. **Prompt safeguards.** The AI is instructed to *re-format* or *re-phrase* what’s in
+   that file—**but never to invent new facts.** This keeps the résumé honest and
+   accurate.
+3. **Human verification.** I personally read and sign off on every résumé before it is
+   submitted.
+4. **Full audit trail.** Because the data and prompts are version-controlled, you can
+   always ask to see exactly what produced the résumé on your desk.
 
 ### What this means for you
-- **Faster screening.** The résumé you receive spotlights the exact tools, outcomes, and
-  domain knowledge your posting calls for.
-- **Full transparency.** You can inspect the YAML or replicate the prompt yourself.
-- **Zero embellishment.** Every bullet point traces back to verifiable work or public
-  commits. No “creative writing,” just curated facts.
 
-If you have questions about a particular claim, technology choice, or project, I’m happy
-to walk you through the underlying evidence—code, architecture diagrams, or references.
+- **Clearer screening.** The résumé you receive surfaces the skills, tools, and results
+  you listed in the job description, reducing guesswork in the first pass.
+- **Transparency by design.** Curious about any line item? I can point you to the
+  project repo, architecture diagram, or reference that backs it up.
+- **Continuous improvement.** The same AI-powered workflow that trims paperwork on my
+  end lets me reinvest energy into staying current with industry trends—*benefiting the
+  teams I join.*
+- **Working demonstration of my skills.** The résumé you receive is a working example
+  of my ability to *think* outside the box, *automate* repetitive tasks and *augment* my own capabilities using
+  language models. It’s a great way to prove my candidacy beyond tools and technologies.
+
+*If you’d like to review the underlying data or discuss how a particular accomplishment
+might translate to your environment, just let me know. I’m happy to walk through the
+details.*
 
 ---
 
