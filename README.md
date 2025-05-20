@@ -80,6 +80,22 @@ details.*
 
 ---
 
+## General Caution
+
+LLM technology remains in its infancy. **This isn't a perfect solution.**
+
+Watch for the following:
+
+* **Hallucinations** - it once hallucinated so badly it thought I was applying for a job as a
+  *mortician* in a *funeral home* in *New York City*. Bring a whole new meaning to **post-mortems.**
+* **Invention of facts** - Rarely, it will start to invent facts that aren't true. **Review every resume it generates,**
+  or else you might find yourself being asked about your experience as an astronaut.
+
+If you see this begin to happen, it's a sign that the context window is full. You will need to terminate the conversation
+and start over. Though, in practice, I've found it takes av few days of use before this starts happening.
+
+---
+
 ## Job‑Finder Workflow (`Job Finder.yaml`) <a id="job-finder-workflow"></a>
 
 ### Key Features <a id="key-features"></a>
